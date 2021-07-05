@@ -2,6 +2,7 @@ package view;
 
 import utils.InputValication;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class InputView {
@@ -13,4 +14,8 @@ public class InputView {
         return inputValication.checkGivenMoeny(scanner.nextLine());
     }
 
+    public List<Integer> winningNumber(){
+        System.out.println("지난주 당첨 번호를 입력해주세요");
+        return inputValication.winningNumberParser(scanner.nextLine());
+    }
 }
