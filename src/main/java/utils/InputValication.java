@@ -46,4 +46,16 @@ public class InputValication {
     private boolean isNullEmpty(String inputLine) {
         return inputLine == null || inputLine.isEmpty();
     }
+
+    public int bonusNumberParser(String number, List<Integer> winningNumber) {
+        if(isNullEmpty(number)){
+            throw new RuntimeException("공백이나 null을 입력할 수 없습니다.");
+        }
+        isLottoNumber(number);
+        int bonusNumber = Integer.parseInt(number);
+        if(winningNumber.contains(bonusNumber)){
+            throw new RuntimeException("로또번호와 중복된 숫자를 입력할 수 없습니다.");
+        }
+        return bonusNumber;
+    }
 }
